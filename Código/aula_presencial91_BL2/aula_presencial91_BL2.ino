@@ -23,7 +23,7 @@ void setup() {
   Serial.begin(9600);
   pinMode(pino2,INPUT_PULLUP);
 
-  mqttClient.setServer("3.82.94.158",1883);
+  mqttClient.setServer("54.210.160.207",1883);
   
   Serial.print("o IP do arduino e: ");
   Serial.println(Ethernet.localIP());
@@ -50,12 +50,12 @@ void loop() {
 
   if(estado_sensor == 0)
   {
-    mensagem = mqttClient.publish("brunalandim-22","1");
+    mensagem = mqttClient.publish("brunalandim-22","fechado");
 
 
   }
   else{
-        mensagem = mqttClient.publish("brunalandim-22","0");
+        mensagem = mqttClient.publish("brunalandim-22","aberto");
 
 
   }
